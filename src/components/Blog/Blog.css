@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;800;900&family=Squada+One&display=swap');
+
+
+button:hover {
+    opacity: 0.5;
+}
+.blogPrev {
+    text-align: left;
+    font-size: 14px;
+}
+
+.backButton {
+    background-color: #fff;
+    color: #5188ed;
+    border: none
+}
+
+.blogTitle {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.blogTitleLg {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+.blogContent {
+    font-size: 14px;
+    color: #525252;
+    /* font-weight: 500; */
+}
+
+.blogItem {
+  white-space: pre-wrap;
+}
+
+.blogSm {
+    font-size: 10px;;
+}
+
+@media screen and (max-width: 700px) {
+
+    .blogTitle {
+        font-size: 12px !important;
+        font-weight: 600;
+    }
+
+    .blogTitleLg {
+        font-size: 24px;
+    }
+
+    .blogPrev {
+        font-size: 8px !important;
+    }
+
+    .blogSm {
+        font-size: 6px !important;
+    }
+
+    .blogContent {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}

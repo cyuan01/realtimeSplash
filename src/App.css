@@ -1,9 +1,58 @@
 
 /* load google fonts poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;800;900&family=Squada+One&display=swap');
 
 
 /*********** div styles / body styles **************/
+.navbar {
+  background-color: #5188ed;
+  -webkit-box-shadow: 0px 5px 41px 0px rgba(48, 85, 148, 0.26);
+  -moz-box-shadow: 0px 5px 41px 0px  rgba(48, 85, 148, 0.26);
+  box-shadow: 0px 5px 41px 0px  rgba(48, 85, 148, 0.26);
+  height: 40px;
+}
+
+.iconLg {
+  font-size: 80px;
+}
+
+
+
+.linkTxt {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  color: #fff
+}
+
+.navLink {
+  margin-left: 25px;
+  text-align: center;
+  /* padding-left: 15px;
+  padding-right: 15px; */
+  border-radius: 5px;
+  /* width: 50px; */
+  /* background-color: #fff; */
+  /* border-width: 2px; */
+  border: solid #fff;
+  border-width: 1px 1px;
+
+  
+}
+.navBrand:hover, .navLink:hover, .linkTxt:hover{
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff;
+  
+  
+}
+
+.blogBanner {
+  background-color: #5188ed;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -16,12 +65,25 @@ html {
 	}
 }
 
+.valueProp h2 {
+  /* margin-left: 5%;
+  margin-right: 5%; */
+  margin: 5%;
+  /* text-indent: 50px; */
+}
+
 /* navbar with shadow */
 .nav-custom {
   background-color: #5188ed;
   -webkit-box-shadow: 0px 5px 41px 0px rgba(48,84,148,1);
   -moz-box-shadow: 0px 5px 41px 0px rgba(48,84,148,1);
   box-shadow: 0px 5px 41px 0px rgba(48,84,148,1);
+
+  color: #fff
+}
+
+.nav-link {
+  color: #fff
 }
 
 .parallax {
@@ -30,7 +92,7 @@ html {
   /* background-color: #5188ed; */
 
   /* Full height */
-  height: 750px; 
+  /* height: 800px;  */
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -45,6 +107,23 @@ html {
   font-weight: 500;
   padding-top: 10%;
   padding-bottom: 5%;
+}
+
+.taglines {
+  /* background-color: #f0f0f0;
+   */
+
+   -webkit-box-shadow: 0px 5px 41px 0px rgba(139, 139, 139, 0.26);
+   -moz-box-shadow: 0px 5px 41px 0px  rgba(139, 139, 139, 0.26);
+   box-shadow: 0px 5px 41px 0px  rgba(139, 139, 139, 0.26);
+
+  width: 90%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.centerTxt {
+  text-align: center;
 }
 
 /* centers anything */
@@ -70,7 +149,8 @@ video:hover {
 
 .page-footer {
   padding: 4% 0;
-  background-color: rgb(211, 211, 211);
+  /* background-color: rgb(211, 211, 211); */
+  background-color: #f0f0f0;
   
 }
 
@@ -78,7 +158,8 @@ video:hover {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   padding-left: 10px;
-  color: #ffffff;
+  /* color: #ffffff; */
+  color: #525252
 }
       /****************************************/
 
@@ -104,8 +185,10 @@ video:hover {
 	font-size: 50px;
     padding-top: 5%;
     font-family: 'Poppins', sans-serif;
+    /* font-family: 'Squada One', cursive; */
     font-weight: 800;
 }
+
 
 p {
   font-size: 18px;
@@ -113,15 +196,46 @@ p {
   color: rgb(131, 131, 131);
 }
 
-.header {
+.mainBody h2 {
+  font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  font-weight: 800;
+  font-weight: 300;
+  color: rgb(112, 112, 112);
+}
+
+.header {
+  font-size: 38px;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Squada One', cursive; */
+  font-weight: 700;
   color: rgb(112, 112, 112);
 }
 .header-blue{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 800;
-    color:#5188ed;
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color:#5188ed;
+}
+
+.blue-h3 {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  /* color:#5188ed; */
+  color: rgb(112, 112, 112);
+  font-style: italic;
+}
+
+.blue {
+
+}
+
+.header-white{
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Squada One', cursive; */
+  font-weight: 700;
+  color:#ffffff;
 }
 
 /****************************************/
@@ -163,9 +277,15 @@ p {
 /****************************************/
 
 /*** email capture section styling ***/
-
+.label {
+  color: #ffffff;
+}
+.formRow {
+  padding-bottom: 10px;
+}
 .emailCapture {
-  border-color: #5188ed;
+  background-color: #5188ed;
+  border-color: #ffffff;
   border-radius: 10px;
   border-style: solid;
   -o-transition:.5s;
@@ -189,6 +309,7 @@ p {
   padding: 20px 20px
 }
 
+
 /****************************************/
 
 /* to keep toast msg fixed at top of screen */
@@ -209,7 +330,7 @@ p {
 	    background-color: #5188ed;
     
         /* Full height */
-        height: 750px; 
+        /* height: 750px;  */
     
         /* Create the parallax scrolling effect */
         background-attachment: fixed;
@@ -217,6 +338,37 @@ p {
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+  .page h1 {
+    font-size: 32px;
+  }
+  .page p {
+    font-size: 14px;
+  }
+
+  .page h2 {
+    font-size: 16px;
+  }
+
+  .mainBody h1, .header-white, .header  {
+    font-size: 20px;
+  }
+
+  .blue-h3 {
+    font-size: 14px
+  }
+
+  .screenimg {
+    width: 50%;
+  }
+
+  .valueProp h2 {
+    font-size: 12px;
+  }
+
+  
+
+
 
 }
 
@@ -230,6 +382,13 @@ p {
     text-align: center;
     text-decoration: none;
     margin: 10px;
+    border-radius: 5px;
+  }
+  .fa:hover {
+    /* background-color: white; */
+    opacity: 0.5;
+    text-decoration: none;
+    color: #fff
   }
   
   /* Facebook */
@@ -248,3 +407,6 @@ p {
   }
 
 /****************************************/
+
+/****************   blog   ****************/
+
