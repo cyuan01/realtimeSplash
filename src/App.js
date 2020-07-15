@@ -36,6 +36,16 @@ export default function App() {
                     <Route path="/blog">
                         <Blog />
                     </Route>
+
+                    {/* redirect to external blog */}
+                    {/* <Route 
+                        path='/blog' 
+                        component={() => { 
+                            window.location.replace('https://blog.realtimesports.io');
+                            // window.location.href = 'https://www.bmwusa.com/'; 
+                            return null;
+                       }}                       
+                    /> */}
                     <Route path="/">
                         <Home />
                     </Route>
