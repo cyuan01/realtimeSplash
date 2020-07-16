@@ -14,7 +14,9 @@ button:hover {
 .backButton {
     background-color: #fff;
     color: #5188ed;
-    border: none
+    border: none;
+    font-size: 18px;
+    font-weight: 800;
 }
 
 .blogTitle {
@@ -22,6 +24,13 @@ button:hover {
   font-size: 20px;
   font-weight: 700;
 }
+
+.blogSubtitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+}
+
 
 .blogTitleLg {
     text-align: left;

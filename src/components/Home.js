@@ -176,6 +176,7 @@ class Home extends React.Component {
                         <Col md={6} className="formRow">
                           <Form.Control
                             size="sm"
+                            id="firstInput"
                             type="text"
                             placeholder="First"
                             value={this.state.value} onChange={this.handleFChange}
@@ -184,6 +185,7 @@ class Home extends React.Component {
                         <Col md={6} className="formRow">
                           <Form.Control
                             size="sm"
+                            id="lastInput"
                             type="text"
                             placeholder="Last"
                             value={this.state.value} onChange={this.handleLChange}

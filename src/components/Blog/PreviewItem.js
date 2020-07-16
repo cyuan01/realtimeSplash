@@ -18,10 +18,11 @@ class PreviewItem extends React.Component {
             <button
                 className="blogButton"
                 style={{
-                    width: "90%",
+                    // width: "90%",
                     display: "flex",
                     flex: 1,
                     flexDirection: "row",
+                    // alignSelf: "center",
                     backgroundColor: "#fff",
                     borderWidth: 1,
                     border: "solid",
@@ -31,7 +32,7 @@ class PreviewItem extends React.Component {
                     padding: 10,
                     borderRadius: 5
                 }}
-                onClick={() => this.props.handleClick(this.props.blogID)}
+                // onClick={() => this.props.handleClick(this.props.blogID)}
             >
 
                 <div style={{

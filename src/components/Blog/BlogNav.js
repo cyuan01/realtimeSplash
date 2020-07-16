@@ -1,3 +1,60 @@
+// import React from 'react';
+// import '../../App.css';
+// import './Blog.css'
+// import Blog1 from './Blog1'
+// import Blog2 from './Blog2'
+// import Blog from './Blog'
+
+// import {
+//     BrowserRouter as Router,
+//     Switch,
+//     Route,
+//     Link
+// } from "react-router-dom";
+
+// class BlogNav extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             reading: false,
+//         };
+
+//         this.readBlog = this.readBlog.bind(this);
+//         // this.goBack = this.goBack.bind(this);
+
+//     }
+
+//     readBlog = (blog) => {
+//         this.setState({path: blog})
+//         this.setState({reading: true})
+//         console.log("reading!")
+//     }
+//     render() {
+//             return (
+//             <Router>
+//                 {this.state.isReading ? (
+//                     <Switch>
+//                         <Route path={this.state.path}>
+//                             <Blog2 />
+//                         </Route>
+//                         <Route path={this.state.path}>
+//                             <Blog1 />
+//                         </Route>
+//                     </Switch>
+//                 ) : (
+//                     <Blog readBlog={this.readBlog}/>
+//                 )}
+
+//             </Router>
+//             )
+
+//     }
+// }
+
+// export default BlogNav
+
+
+
 import React from 'react';
 import '../../App.css';
 import './Blog.css'
@@ -11,7 +68,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { GiBookCover } from 'react-icons/gi'
 import { BsArrowReturnLeft } from 'react-icons/bs'
 import { BsPencil } from 'react-icons/bs'
-import { FaRegCalendarAlt } from 'react-icons/fa'
+import { FaRegCalendarAlt, FaGalacticSenate } from 'react-icons/fa'
 import camNewton from '../../assets/blog/camNewton.png'
 import camTweet from '../../assets/blog/camNewton2.jpg'
 import jamesHarden from '../../assets/blog/jamesHarden.png'
@@ -26,7 +83,7 @@ import {
     Link
 } from "react-router-dom";
 
-class Blog extends React.Component {
+class BlogNav extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -62,6 +119,7 @@ class Blog extends React.Component {
 
         this.readBlog = this.readBlog.bind(this);
         this.goBack = this.goBack.bind(this);
+        this.reset = this.reset.bind(this);
 
     }
 
@@ -73,11 +131,11 @@ class Blog extends React.Component {
     //   }
 
     readBlog(blogID) {
-        var blog = this.state.blogs[blogID]
+        // var blog = this.state.blogs[blogID]
 
-        this.setState({ title: blog.title })
-        this.setState({ content: blog.content })
-        this.setState({ blogID: blogID })
+        // this.setState({ title: blog.title })
+        // this.setState({ content: blog.content })
+        // this.setState({ blogID: blogID })
         this.setState({ reading: true })
 
     }
@@ -89,18 +147,12 @@ class Blog extends React.Component {
         this.setState({ blogID: "" })
     }
 
-    render() {
+    reset() {
+        this.setState({reading: false})
+    }
 
-        // if (this.state.reading) {
-        //     switch(this.state.blogID) {
-        //         case "1" : 
-        //             return (<><Blog1 goBack={this.goBack}/><Footer /></>)
-        //         case "2" :
-        //             return (<><Blog2 goBack={this.goBack}/><Footer /></>)
-        //         default:
-        //             return (<></>)
-        //     }
-        // } else {
+
+    render() {
 
             return (
                 <div className="page" style={{display: "flex", flex: 1, flexDirection: "column"}}>
@@ -114,6 +166,16 @@ class Blog extends React.Component {
                             </div>
                         </div>
                     </div>
+                    {this.state.reading? (
+                        <div style={{paddingTop: 20, paddingLeft: 20}}>
+                            <Link to="/blog">
+                            <button className="backButton" onClick={() => this.goBack()}>
+                                <BsArrowReturnLeft /> Back
+                            </button>
+                            </Link>
+                        </div>
+                    ) : (
+                       <>
                     <div className="blogBanner" style={{ display: "flex", flex: 1 }}>
                         <Container>
                             <div className="spacer"></div>
@@ -127,25 +189,30 @@ class Blog extends React.Component {
                             <div className="spacer"></div>
                         </Container>
                     </div>
+
                     <div style={{ display: "flex", flex: 2, flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                         <br/><br/>
-                        <Link to="/blog/2">
+                        <Link to="/blog/2" style={{display: "flex", justifyContent: "center", width: "90%",}}>
                         <PreviewItem
                             blogID={"2"}
-                            handleClick={()=>this.props.readBlog()}
+                            // handleClick={this.readBlog}
                             title={this.state.blogs["2"].title}
                             content={this.state.blogs["2"].content}
                         />
                         </Link>
-                        <Link to="/blog/1">
+                        <Link to="/blog/1" style={{display: "flex", justifyContent: "center", width: "90%",}}>
                         <PreviewItem
                             blogID={"1"}
-                            handleClick={()=>this.props.readBlog()}
+                            // handleClick={this.readBlog}
                             title={this.state.blogs["1"].title}
                             content={this.state.blogs["1"].content}
                         />
                         </Link>
                     </div>
+                    </>
+                    )
+                    }
+                    
                     {/* <div id="retainable-rss-embed"
                         data-rss="https://medium.com/feed/retainable,
                                 https://medium.com/feed/js-dojo,                
@@ -158,6 +225,13 @@ class Blog extends React.Component {
                         data-offset="-200">&#160;
                     </div> */}
 
+                    <Route path={`/blog/1`}>
+                        <Blog1 minimize={this.readBlog} reset={this.reset}/>
+                    </Route>
+                    <Route path={`/blog/2`}>
+                        <Blog2 minimize={this.readBlog} reset={this.reset}/>
+                    </Route>
+
                     <Footer />
 
                 </div>
@@ -166,4 +240,4 @@ class Blog extends React.Component {
     }
 }
 
-export default Blog
+export default BlogNav

@@ -322,8 +322,48 @@ p {
   z-index: 99999;
 }
 
+/****************************************/
+
+/********** social links styling *************/
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 10px;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+.fa:hover {
+  /* background-color: white; */
+  opacity: 0.5;
+  text-decoration: none;
+  color: #fff
+}
+
+/* Facebook */
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
 /*** conditional styling for small screens ***/
 @media screen and (max-width: 700px) {
+
+  .fa {
+    padding: 10px;
+    font-size: 15px;
+  }
 
 	.parallax {
         background-image: none;
@@ -371,40 +411,6 @@ p {
 
 
 }
-
-/****************************************/
-
-/********** social links styling *************/
-
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-    text-decoration: none;
-    margin: 10px;
-    border-radius: 5px;
-  }
-  .fa:hover {
-    /* background-color: white; */
-    opacity: 0.5;
-    text-decoration: none;
-    color: #fff
-  }
-  
-  /* Facebook */
-  .fa-linkedin {
-    background: #007bb5;
-    color: white;
-  }
-  
-  .fa-youtube {
-    background: #bb0000;
-    color: white;
-  }
-  .fa-instagram {
-    background: #125688;
-    color: white;
-  }
 
 /****************************************/
 
