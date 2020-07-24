@@ -1,65 +1,9 @@
-// import React from 'react';
-// import '../../App.css';
-// import './Blog.css'
-// import Blog1 from './Blog1'
-// import Blog2 from './Blog2'
-// import Blog from './Blog'
-
-// import {
-//     BrowserRouter as Router,
-//     Switch,
-//     Route,
-//     Link
-// } from "react-router-dom";
-
-// class BlogNav extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             reading: false,
-//         };
-
-//         this.readBlog = this.readBlog.bind(this);
-//         // this.goBack = this.goBack.bind(this);
-
-//     }
-
-//     readBlog = (blog) => {
-//         this.setState({path: blog})
-//         this.setState({reading: true})
-//         console.log("reading!")
-//     }
-//     render() {
-//             return (
-//             <Router>
-//                 {this.state.isReading ? (
-//                     <Switch>
-//                         <Route path={this.state.path}>
-//                             <Blog2 />
-//                         </Route>
-//                         <Route path={this.state.path}>
-//                             <Blog1 />
-//                         </Route>
-//                     </Switch>
-//                 ) : (
-//                     <Blog readBlog={this.readBlog}/>
-//                 )}
-
-//             </Router>
-//             )
-
-//     }
-// }
-
-// export default BlogNav
-
-
-
 import React from 'react';
 import '../../App.css';
 import './Blog.css'
 import Blog1 from './Blog1'
 import Blog2 from './Blog2'
+import Blog3 from './Blog3'
 // -- react bootstrap imports
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -72,6 +16,7 @@ import { FaRegCalendarAlt, FaGalacticSenate } from 'react-icons/fa'
 import camNewton from '../../assets/blog/camNewton.png'
 import camTweet from '../../assets/blog/camNewton2.jpg'
 import jamesHarden from '../../assets/blog/jamesHarden.png'
+import celticsBanner18 from '../../assets/blog/celticsBanner18.png'
 
 import PreviewItem from './PreviewItem'
 import Footer from '../Footer'
@@ -111,6 +56,14 @@ class BlogNav extends React.Component {
                         date: "July 16, 2020",
                         img: {pic: jamesHarden},
                         post: "The Houston Rockets’ title hopes, now listed at +1300 odds, live and die with their ball-hogging, stepback-shooting, foul-seeking superstar in James Harden. Here’s how the bearded baller could get even better during the shortened season in Orlando."
+                    }
+                },
+                "3": {
+                    title: "+1700??: The Biggest Sleeper of The NBA Bubble",
+                    content: {
+                        date: "July 23, 2020",
+                        img: {pic: celticsBanner18},
+                        post: "The Boston Celtics started off the 2019-20 season with less than stellar expectations after losing center Al Horford and flat-earther point guard Kyrie Irving in free agency. That all changed after “Cardiac” Kemba Walker joined the team and youngster Jayson Tatum emerged into a superstar."
                     }
                 }
             }
@@ -192,6 +145,13 @@ class BlogNav extends React.Component {
 
                     <div style={{ display: "flex", flex: 2, flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                         <br/><br/>
+                        <Link to="/blog/3" style={{display: "flex", justifyContent: "center", width: "90%",}}>
+                        <PreviewItem
+                            blogID={"3"}
+                            title={this.state.blogs["3"].title}
+                            content={this.state.blogs["3"].content}
+                        />
+                        </Link>
                         <Link to="/blog/2" style={{display: "flex", justifyContent: "center", width: "90%",}}>
                         <PreviewItem
                             blogID={"2"}
@@ -230,6 +190,9 @@ class BlogNav extends React.Component {
                     </Route>
                     <Route path={`/blog/2`}>
                         <Blog2 minimize={this.readBlog} reset={this.reset}/>
+                    </Route>
+                    <Route path={`/blog/3`}>
+                        <Blog3 minimize={this.readBlog} reset={this.reset}/>
                     </Route>
 
                     <Footer />
