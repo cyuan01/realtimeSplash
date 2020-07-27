@@ -13,32 +13,18 @@ import ThankYou from './components/Referral/ThankYou'
 import pic from './assets/logos/rt.png' // realtime text logo
 import history from './history'
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            resetBlog: -1
-        };
-        this.blogRef = React.createRef();
-        // this.resetBlog = this.resetBlog.bind(this);
-    };
-
-    // componentDidMount() {
-    //     this.setState({resetBlog: () => {this.blogRef.current.reset()}})
-    //     // this.questHistToolRef.current.toggleTooltip();
-    // }
+// class App extends React.Component {
+  function App() {
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         resetBlog: -1
+    //     };
+    //     this.blogRef = React.createRef();
+    // };
 
 
-    // resetBlog() {
-    //     if (this.blogRef.current) {
-    //         // this.blogRef.current.reset
-    //         console.log(this.blogRef.current.reset)
-    //     }
-    //     console.log(this.blogRef.current.reset)
-    //     // this.blogRef.current.reset
-    // }
-
-    render() {
+    // render() {
 
 
         return (
@@ -57,9 +43,9 @@ class App extends React.Component {
                         </div>
                         <div className="navLink" style={{ width: 80 }}>
                             <Link onClick={()=> {
-                                if (this.blogRef.current != null) {
-                                    this.blogRef.current.reset()
-                                }
+                                // if (this.blogRef.current != null) {
+                                //     this.blogRef.current.reset()
+                                // }
                             }} to="/blog" className="linkTxt" activeStyle={{ color: 'red' }}>
                                 Blog
                         </Link>
@@ -67,10 +53,9 @@ class App extends React.Component {
                     </div>
                     <Switch>
 
-                        <Route path="/blog">
-                            {/* <BlogNav ref={this.blogRef} reading={false} /> */}
-                            <ThankYou />
-                        </Route>
+                        {/* <Route path="/blog">
+                            <BlogNav />
+                        </Route> */}
                         {/* redirect to external blog */}
                         {/* <Route 
                         path='/blog' 
@@ -80,14 +65,17 @@ class App extends React.Component {
                             return null;
                        }}                       
                     /> */}
-                        <Route path="/">
+                        {/* <Route path="/">
                             <Home />
-                        </Route>
+                        </Route> */}
+                        <Route exact path="/" component={Home} />
+                        <Route path='/blog' component={BlogNav} />
+                        <Route path='/thankyou' component={ThankYou} />
                     </Switch>
                 </div>
             </Router>
 
         );
-    }
+    // }
 }
 export default App

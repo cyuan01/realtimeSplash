@@ -4,6 +4,7 @@ import React from 'react';
 import '../App.css';
 import Footer from './Footer'
 
+import { useHistory } from 'react-router-dom';
 
 // -- react bootstrap imports
 import { Button, Container, Row, Col, Form, Toast } from 'react-bootstrap';
@@ -34,11 +35,11 @@ class Home extends React.Component {
     };
 
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-
     this.handleEChange = this.handleEChange.bind(this);
     this.handleFChange = this.handleFChange.bind(this);
     this.handleLChange = this.handleLChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.history = this.history.bind(this);
   }
 
   // get window
@@ -80,21 +81,26 @@ class Home extends React.Component {
       last: this.state.lst
     }
     if (this.state.mail.indexOf('@') != -1) {
-      const userRef = await db.collection('users').add(user)
+      // const userRef = await db.collection('users').add(user)
       //db auto creates an id so we update the empty uid with the created id
-      userRef.set({
-        uid: userRef.id
-      }, { merge: true });
+      // userRef.set({
+      //   uid: userRef.id
+      // }, { merge: true });
 
       // reset email value and show toast
       this.setState({ mail: "" })
       this.setState({ fst: "" })
       this.setState({ lst: "" })
       this.setState({ toast: true })
+      this.triggerThanks()
     } else {
       alert("Sorry Looks like we need an email to keep you updated 😲.")
       this.setState({ mail: "" })
     }
+  }
+
+  triggerThanks = e => {
+    this.props.history.push("/thankyou")
   }
 
 
@@ -135,6 +141,7 @@ class Home extends React.Component {
 
           {/* website header text and button */}
           <Container>
+            <button onClick={this.triggerThanks}>TEST HERE</button>
             <Row>
               <Col sm={4}>
                 <div className="title head_reg head_mob">
