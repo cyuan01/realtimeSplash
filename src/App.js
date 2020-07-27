@@ -9,6 +9,7 @@ import {
 import Home from './components/Home'
 import Blog from './components/Blog/Blog'
 import BlogNav from './components/Blog/BlogNav'
+import ThankYou from './components/Referral/ThankYou'
 import pic from './assets/logos/rt.png' // realtime text logo
 import history from './history'
 
@@ -67,9 +68,9 @@ class App extends React.Component {
                     <Switch>
 
                         <Route path="/blog">
-                            <BlogNav ref={this.blogRef} reading={false} />
+                            {/* <BlogNav ref={this.blogRef} reading={false} /> */}
+                            <ThankYou />
                         </Route>
-
                         {/* redirect to external blog */}
                         {/* <Route 
                         path='/blog' 
