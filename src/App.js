@@ -9,9 +9,17 @@ import {
 import Home from './components/Home'
 import Blog from './components/Blog/Blog'
 import BlogNav from './components/Blog/BlogNav'
+
 import ThankYou from './components/Referral/ThankYou'
+import Dashboard from './components/Referral/Dashboard'
+import Login from './components/Referral/Login'
+import Signup from './components/Referral/Signup'
+import Referral from './components/Referral/Referral'
+
+
 import pic from './assets/logos/rt.png' // realtime text logo
 import history from './history'
+
 
 // class App extends React.Component {
   function App() {
@@ -71,6 +79,10 @@ import history from './history'
                         <Route exact path="/" component={Home} />
                         <Route path='/blog' component={BlogNav} />
                         <Route path='/thankyou' component={ThankYou} />
+                        <Route path='/signup' component={Signup} />
+                        <Route path='/referral/**' component={Referral} />
+                        <Route path='/login' component={Login}/>
+                        <Route path='/dashboard' component={Dashboard}/>
                     </Switch>
                 </div>
             </Router>
